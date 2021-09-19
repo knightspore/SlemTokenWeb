@@ -64,7 +64,7 @@ export default function TransferTokens() {
   return !txHash ? (
     <form
       onSubmit={(e) => submitForm(e)}
-      class="mt-8 space-y-6 flex flex-col items-center"
+      className="flex flex-col items-center mt-8 space-y-6"
     >
       <h2 className="text-lg font-bold">Make a New Transfer</h2>
       <div className="flex flex-col gap-2 ">
@@ -99,7 +99,7 @@ export default function TransferTokens() {
       </button>
     </form>
   ) : (
-    <div className="mt-8 space-y-6 flex flex-col items-center">
+    <div className="flex flex-col items-center mt-8 space-y-6">
       <h2 className="text-lg font-bold">Transaction Successful!</h2>
       <p>
         Hash:

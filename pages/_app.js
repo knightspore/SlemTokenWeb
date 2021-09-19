@@ -8,7 +8,6 @@ function MyApp({ Component, pageProps }) {
     <MetaMaskWrapper>
       <Head>
         <title>$lemtoken</title>
-        <link rel="icon" href="/favicon.ico" />
       </Head>
       <LoginStatusIndicator />
       <Component {...pageProps} />
