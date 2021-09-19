@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useRouter } from "next/dist/client/router";
+import { useEffect, useState } from "react";
 import Input from "./Atoms/Input";
 import { useMMContext } from "./_Meta/MetaMaskProvider";
 
@@ -31,6 +32,13 @@ export default function TransferTokens() {
 
   const [txHash, setTxHash] = useState(null);
   const [loading, setLoading] = useState(false);
+  const router = useRouter();
+  useEffect(() => {
+    if (router.query) {
+      document.getElementById("amount").value = router.query["amt"] || null;
+      document.getElementById("address").value = router.query["addr"] || null;
+    }
+  });
 
   const submitForm = async (e) => {
     e.preventDefault();
@@ -62,10 +70,7 @@ export default function TransferTokens() {
   };
 
   return !txHash ? (
-    <form
-      onSubmit={(e) => submitForm(e)}
-      className="flex flex-col items-center mt-8 space-y-6"
-    >
+    <form onSubmit={(e) => submitForm(e)} className="space-y-6">
       <h2 className="text-lg font-bold">Make a New Transfer</h2>
       <div className="flex flex-col gap-2 ">
         <label htmlFor="amount">Transfer Amount</label>

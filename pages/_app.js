@@ -1,7 +1,7 @@
 import Head from "next/head";
 import "../styles/globals.css";
+import Header from "../components/Organisms/Header";
 import { MetaMaskWrapper } from "../components/_Meta/MetaMaskProvider";
-import LoginStatusIndicator from "../components/LoginStatusIndicator";
 
 function MyApp({ Component, pageProps }) {
   return (
@@ -9,8 +9,10 @@ function MyApp({ Component, pageProps }) {
       <Head>
         <title>$lemtoken</title>
       </Head>
-      <LoginStatusIndicator />
-      <Component {...pageProps} />
+      <Header />
+      <div className="container p-6 lg:p-12">
+        <Component {...pageProps} />
+      </div>
     </MetaMaskWrapper>
   );
 }

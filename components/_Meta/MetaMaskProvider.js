@@ -19,6 +19,8 @@ export function MetaMaskWrapper({ children }) {
           })
           .catch((err) => console.log(err))
       : setWeb3("Disconnected");
+
+      console.log(ethereum);
   }, []);
 
   return (
