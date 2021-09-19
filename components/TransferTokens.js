@@ -103,7 +103,11 @@ export default function TransferTokens() {
       <h2 className="text-lg font-bold">Transaction Successful!</h2>
       <p>
         Hash:
-        <a target="_blank" href={`https://ropsten.etherscan.io/tx/${txHash}`}>
+        <a
+          target="_blank"
+          rel="nofollow noopener noreferrer"
+          href={`https://ropsten.etherscan.io/tx/${txHash}`}
+        >
           {txHash}
         </a>
       </p>

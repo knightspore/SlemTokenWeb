@@ -10,7 +10,13 @@ export default function ProfileCard({ user }) {
         marginBottom: "2rem",
       }}
     >
-      <Image src={user.avatar} width={96} height={96} layout="responsive" />
+      <Image
+        src={user.avatar}
+        width={96}
+        height={96}
+        layout="responsive"
+        alt="User avatar"
+      />
       <p>
         <Link href={"/" + user.address}>
           <a>{user.address}</a>
